@@ -1,0 +1,31 @@
+#!/usr/bin/env python3
+import sys
+# simple VM: opcodes:
+# 0x01 PUSH byte
+# 0x02 XOR keylen byte (set keylen)
+# 0x03 OUT (append byte from memory pos)
+# 0xff HALT
+# We'll create simple behavior: key is first 16 bytes written to mem by PUSHes, then OUT outputs encrypted bytes which need to be XORed with key to get flag
+code = open(sys.argv[1],'rb').read()
+mem = [0]*256
+pc=0
+keylen=0
+out = []
+ptr = 0
+while pc < len(code):
+    op = code[pc]; pc+=1
+    if op==0x01:
+        b=code[pc]; pc+=1
+        mem[ptr]=b; ptr=(ptr+1)%256
+    elif op==0x02:
+        keylen=code[pc]; pc+=1
+    elif op==0x03:
+        pos = code[pc]; pc+=1
+        out.append(mem[pos])
+    elif op==0xff:
+        break
+    else:
+        # unknown
+        pass
+# print raw bytes
+sys.stdout.buffer.write(bytes(out))
