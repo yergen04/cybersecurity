@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1759749990870_4a3016bf-414b-434f-b7b9-8342f781a552",
+    "username": "anonymous",
+    "task_id": 2,
+    "submitted_flag": "\\x83\\xde",
+    "is_correct": false,
+    "submitted_at": "2025-10-06T11:26:30.873Z"
+  },
+  {
+    "id": "1759749997185_4c0ee7b0-8188-4801-82df-87e8ad0dae4f",
+    "username": "anonymous",
+    "task_id": 3,
+    "submitted_flag": "\\x83\\xde",
+    "is_correct": false,
+    "submitted_at": "2025-10-06T11:26:37.185Z"
+  },
+  {
+    "id": "1759750567225_a62ca109-3f42-497a-8510-9f2d363899be",
+    "username": "anonymous",
+    "task_id": 4,
+    "submitted_flag": "FLAG{heap_master}",
+    "is_correct": true,
+    "submitted_at": "2025-10-06T11:36:07.225Z"
+  }
+]
